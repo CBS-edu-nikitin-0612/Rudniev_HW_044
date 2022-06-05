@@ -29,10 +29,8 @@ namespace aditionalTask
         static void Main(string[] args)
         {
             MyClass myClass = new MyClass();
-            //myClass.MethodAsync();
-            //myClass.MethodAsync();
-            //myClass.MethodAsync();
-            Parallel.Invoke(new ParallelOptions() { MaxDegreeOfParallelism = 2 }, myClass.MethodAsync, myClass.MethodAsync, myClass.MethodAsync);
+            for (int i = 0; i < 3; i++)
+                myClass.MethodAsync();
             Console.ReadKey();
         }
     }

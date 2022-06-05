@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Task2
 {
@@ -35,7 +26,7 @@ namespace Task2
         {
             Thread.Sleep(3000);
             infoBox.Text = "connect to database";
-            Task task = ConnectToDBAsyct();
+            Task task = ConnectToDBAsync();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -48,7 +39,7 @@ namespace Task2
             Random random = new Random();
             infoBox.Foreground = new SolidColorBrush(Color.FromRgb((byte)random.Next(), (byte)random.Next(), (byte)random.Next()));
         }
-        private async Task ConnectToDBAsyct()
+        private async Task ConnectToDBAsync()
         {
             TaskScheduler scheduler = new MyTaskScheduler();
             TaskFactory factory = new TaskFactory(scheduler);
